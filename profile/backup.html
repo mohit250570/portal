@@ -1,0 +1,276 @@
+	<?php
+	session_start();
+
+	 ?>
+	<!doctype html>
+	<html lang="en">
+	  <head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="icon" href="../../../../favicon.ico">
+	    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+	    <!-- Bootstrap core CSS -->
+	    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Custom styles for this template -->
+	    <link href="carousel.css" rel="stylesheet">
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+	    <title>Upload files</title>
+	    <script type="text/javascript" src="cond.js"></script>
+	
+	<style>
+		#logout{
+			margin-top: 20px;
+		}
+		#form{
+			text-decoration-style: none;
+
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 20px;
+		}  
+	
+    #select1 {
+        float:left;
+        margin-left: 220px;
+    }
+    #select2 {
+        float:left;
+        margin-left: 50px;
+    }
+     #select3 {
+        float:left;
+        margin-left: 50px;
+    }
+     
+  </style>
+
+	  </head>
+	  <body>
+	  	
+	  	<div class="container" id="logout">
+	  		<a href="logout.php" style="float: right;"><button type="button" class="btn btn-outline-danger">LogOut</button></a>
+	  		
+
+	  	</div>
+	  	<br/>
+	  	<div class="form" id="form">
+	    <form method="POST" action="index.php" enctype="multipart/form-data"> 
+	    <center><h3 style="text-transform: uppercase;"><header>WELCOME <?php if(isset($_SESSION['name'])){
+
+	    echo($_SESSION['name']); }
+	    else{
+	    	header("location:../login/index.html");
+	    }  ?> </header></h3></center>
+	    <hr/>	
+	    </form>
+	    <div style="margin-top: 50px;">
+	    <div class="card" id="select1" style="width: 18rem;">
+	    	<div class="card-body">
+    <h5 class="card-title">Upload Documents</h5>
+    <p class="card-text">Here you can upload new documents.</p>
+    <a href="upload.php" class="btn btn-secondary btn-lg btn-block">Upload Document</a>
+  </div>
+</div>
+   <div class="card" id="select2" style="width: 18rem;">
+	    	<div class="card-body">
+    <h5 class="card-title">Display Document</h5>
+    <p class="card-text">Here all the documents are display which is uploaded by you.</p>
+    <a href="show.php" class="btn btn-secondary btn-lg btn-block">Display Document</a>
+  </div>
+</div>
+   <div class="card" id="select3" style="width: 18rem;">
+	    	<div class="card-body">
+    <h5 class="card-title">Update Details</h5>
+    <p class="card-text">Here you can update your personal details.</p>
+    <a href="update.php" class="btn btn-secondary btn-lg btn-block">Update Details</a>
+  </div>
+  
+</div>
+</div>
+<footer class="bg-black small text-center text-white-50" style="margin-top: 500px">
+    <div class="container">
+      Copyright &copy; GRAYSCALE 2019
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+index.php
+
+
+	<?php
+	session_start();
+
+	 ?>
+	<!doctype html>
+	<html lang="en">
+	  <head>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="icon" href="../../../../favicon.ico">
+
+	    <title>Carousel Template for Bootstrap</title>
+
+	    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+	    <!-- Bootstrap core CSS -->
+	    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Custom styles for this template -->
+	    <link href="carousel.css" rel="stylesheet">
+	    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+	    <title>Upload files</title>
+	    <script type="text/javascript" src="cond.js">
+	</script>
+	
+	<style>
+		#logout{
+			margin-top: 20px;
+		}
+		#form{
+			text-decoration-style: none;
+
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 20px;
+		}
+		
+	</style>
+
+	  </head>
+	  <body>
+	  	
+	  	<div class="container" id="logout">
+	  		<a href="logout.php" style="float: right;"><button type="button" class="btn btn-outline-danger">LogOut</button></a>
+	  		
+
+	  	</div>
+	  	<br/><br/>
+	  	<div class="form" id="form">
+	    <form method="POST" action="index.php" enctype="multipart/form-data"> 
+	    <center><h3><header>UPLOAD DOCUMENTS</header></h3></center>
+	    <hr/>	
+	    <label><span style="font-size:20px">UserName: <?php if(isset($_SESSION['name'])){
+
+	    echo($_SESSION['name']); }
+	    else{
+	    	header("location:../login/index.html");
+	    }   ?></label>
+	    <br/>
+	     <label for="file" >Select file:</label>
+
+	     <input type="file" class="form-control" name="pdf" required="required">
+	    
+	     <label for="name">Name</label>
+	     <input type="text" class="form-control" name="name">
+	     
+	    
+	     <div id="main">
+	     Select Semester:
+	     <select id="sem" name="sem" class="form-control" onchange="populate('sem','slct1')">
+	  	<option value=""></option>
+		  <option value="one">1</option>
+		  <option value="two">2</option>
+		  <option value="three">3</option>
+		  <option value="four">4</option>
+		   <option value="five">5</option>
+		  <option value="six">6</option>
+		  <option value="seven">7</option>
+		  <option value="eight">8</option>
+
+		</select>
+	Choose Branch:
+	<select id="slct1" name="branch" class="form-control" onchange="populate1('slct1','slct2')">
+	</select>
+	
+	Choose Subject:
+	<select id="slct2" class="form-control" name="subject"></select>
+	<hr />
+	</div>
+	     <input type="submit" id="upload" name="upload" class="btn btn-secondary btn-lg btn-block" value="upload" onclick="upload()">
+	 </form>
+	</div>
+
+	     
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  </body>
+
+	<?php
+	if(isset($_POST['upload'])){
+	  $name=$_POST['name'];
+	  $semester=$_POST['sem'];
+	  $branch=$_POST['branch'];
+	  $subject=$_POST['subject'];
+	$conn=mysqli_connect('localhost','root','','grayscale');
+	$file_name=$_FILES['pdf']['name'];
+	$file_type=$_FILES['pdf']['type'];
+	$file_size=$_FILES['pdf']['size'];
+	$file_temp_loc=$_FILES['pdf']['tmp_name'];
+	$file_store="upload/".$file_name;
+	move_uploaded_file($file_temp_loc, $file_store);
+	$query="INSERT INTO `files`(`filename`, `name`, `path`, `semester`, `branch`, `subject`) VALUES ('$name','$file_name','$file_store','$semester','$branch','$subject')";
+	//$query="INSERT INTO `files`(`filename`, `name`, `path`) VALUES ('$name','$file_name','$file_store')";
+	$run=mysqli_query($conn,$query);
+	if($run==True){
+	  header("location:index.php");
+	}
+	else{
+	  header("location:../error.html");
+	}
+	}
+
+	?>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script>
+		document.getElementById('upload').onclick = function upload(){
+	alert("Document Uploaded Successfully");
+};
+	</script>
+
+	</html>
+
